@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
 import { ColorsService } from './colors.service';
-import { ColoresGridComponent } from '../colores-grid/colores-grid.component'
+import { ColoresGridComponent } from '../colores-grid/colores-grid.component';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import { ColoresGridComponent } from '../colores-grid/colores-grid.component'
 export class HomeComponent implements OnInit {
   colors: any | null;
 
-  constructor(public colorsService: ColorsService) { }
+  constructor(public colorsService: ColorsService) {}
 
   ngOnInit() {
     this.colorsService.isLoading = true;
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
         })
       )
       .subscribe((res) => {
-        console.log('colors response init:', res)
+        console.log('colors response init:', res);
         this.colors = res;
       });
   }

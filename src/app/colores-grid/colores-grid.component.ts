@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  AfterViewInit,
+} from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { ColorsService } from '@app/home/colors.service';
 import { finalize } from 'rxjs/operators';
@@ -6,13 +13,12 @@ import { finalize } from 'rxjs/operators';
 @Component({
   selector: 'app-colores-grid',
   templateUrl: './colores-grid.component.html',
-  styleUrls: ['./colores-grid.component.scss']
+  styleUrls: ['./colores-grid.component.scss'],
 })
 export class ColoresGridComponent implements OnInit, OnChanges {
-
   @Input() colors: any;
 
-  constructor(public colorsService: ColorsService) { }
+  constructor(public colorsService: ColorsService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.colors.currentValue) {
@@ -21,8 +27,7 @@ export class ColoresGridComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onPageChange(event: PageEvent) {
     this.colorsService.isLoading = true;
@@ -35,9 +40,8 @@ export class ColoresGridComponent implements OnInit, OnChanges {
         })
       )
       .subscribe((res) => {
-        console.log('colors response page:', res)
+        console.log('colors response page:', res);
         this.colors = res;
-      });;
+      });
   }
-
 }

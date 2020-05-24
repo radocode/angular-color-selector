@@ -4,16 +4,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-colores-selected',
   templateUrl: './colores-selected.component.html',
-  styleUrls: ['./colores-selected.component.scss']
+  styleUrls: ['./colores-selected.component.scss'],
 })
 export class ColoresSelectedComponent implements OnInit {
-
   @Input() color: any;
 
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   copyToClipboard(c: any) {
     console.log(c);
@@ -29,7 +27,7 @@ export class ColoresSelectedComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
-    this.openSnackBar('!Copiado!','');
+    this.openSnackBar('!Copiado!', '');
   }
 
   openSnackBar(message: string, action: string) {
@@ -37,5 +35,4 @@ export class ColoresSelectedComponent implements OnInit {
       duration: 2000,
     });
   }
-
 }

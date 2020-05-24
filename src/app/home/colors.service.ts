@@ -17,21 +17,17 @@ export interface ColorsRequest {
 })
 export class ColorsService {
   isLoading = false;
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
   getColors(page: ColorsRequest) {
     return this.httpClient.get(routes.colors(page)).pipe(
-      map((body: any) =>
-        body
-      ),
+      map((body: any) => body),
       catchError(() => of('Error, could not load colors'))
     );
   }
 
   getAllColors() {
     return this.httpClient.get(routes.allColors()).pipe(
-      map((body: any) =>
-        body
-      ),
+      map((body: any) => body),
       catchError(() => of('Error, could not load colors'))
     );
   }

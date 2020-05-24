@@ -1,14 +1,18 @@
-<mat-card class="pointer" [style.background-color]="color.color" (click)="copyToClipboard(color.color)">
+<mat-card
+  class="pointer"
+  [style.background-color]="color.color"
+  (click)="copyToClipboard(color.color)"
+>
   <mat-card-header>
-    {{color.year}}
+    {{ color.year }}
   </mat-card-header>
-  <br/>
+  <br />
   <mat-card-content>
-    {{color.name}}
+    {{ color.name }}
     <br />
-    <b>{{color.color}}</b>
+    <b>{{ color.color }}</b>
   </mat-card-content>
   <mat-card-actions align="end">
-    {{color.pantone_value}}
+    {{ color.pantone_value }}
   </mat-card-actions>
 </mat-card>

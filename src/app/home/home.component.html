@@ -1,4 +1,7 @@
 <div class="container">
-  <mat-progress-bar *ngIf="colorsService.isLoading" mode="indeterminate"></mat-progress-bar>
+  <mat-progress-bar
+    *ngIf="colorsService.isLoading"
+    mode="indeterminate"
+  ></mat-progress-bar>
   <app-colores-grid [colors]="colors"></app-colores-grid>
 </div>

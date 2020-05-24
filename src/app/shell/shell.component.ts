@@ -9,7 +9,11 @@ import { MediaObserver } from '@angular/flex-layout';
   styleUrls: ['./shell.component.scss'],
 })
 export class ShellComponent implements OnInit {
-  constructor(private router: Router, private titleService: Title, private media: MediaObserver) {}
+  constructor(
+    private router: Router,
+    private titleService: Title,
+    private media: MediaObserver
+  ) {}
 
   ngOnInit() {}
 

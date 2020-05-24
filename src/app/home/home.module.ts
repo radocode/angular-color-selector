@@ -24,4 +24,4 @@ import { ColoresGridComponent } from '@app/colores-grid/colores-grid.component';
   ],
   declarations: [HomeComponent, ColoresGridComponent, ColoresSelectedComponent],
 })
-export class HomeModule { }
+export class HomeModule {}
