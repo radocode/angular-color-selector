@@ -1,4 +1,4 @@
-# colores-app
+# angular-color-selector
 
 Welcome to the project documentation!
 

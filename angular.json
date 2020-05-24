@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "colores-app": {
+    "angular-color-selector": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -71,13 +71,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "colores-app:build",
+            "browserTarget": "angular-color-selector:build",
             "hmr": true,
             "hmrWarning": false
           },
           "configurations": {
             "production": {
-              "browserTarget": "colores-app:build:production",
+              "browserTarget": "angular-color-selector:build:production",
               "hmr": false
             },
             "ci": {
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "colores-app:build"
+            "browserTarget": "angular-color-selector:build"
           }
         },
         "test": {
@@ -133,11 +133,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "colores-app:serve"
+            "devServerTarget": "angular-color-selector:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "colores-app:serve:production"
+              "devServerTarget": "angular-color-selector:serve:production"
             }
           }
         },
@@ -148,7 +148,7 @@
       }
     }
   },
-  "defaultProject": "colores-app",
+  "defaultProject": "angular-color-selector",
   "cli": {
     "analytics": "bc0753e4-3935-44e7-8258-7f77bdc8892c"
   }
