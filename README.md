@@ -2,8 +2,6 @@
 
 Esta app entrega una lista de colores, y que tras elegir color lo puedes copiar en tu portapapeles! Utiliza como API https://reqres.in/api/colors
 
-Esta aplicacion fue hecha como respuesta al examen Frontend de Multiplica.
-
 # Cómo instalar las dependencias y correr el proyecto
 
 1. Ve a la carpeta del proyecto e instala las dependencias:
