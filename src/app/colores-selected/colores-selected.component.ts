@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { ColoresDetailComponent } from '@app/colores-detail/colores-detail.component';
 
 @Component({
   selector: 'app-colores-selected',
@@ -9,30 +11,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ColoresSelectedComponent implements OnInit {
   @Input() color: any;
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
-
-  copyToClipboard(c: any) {
-    console.log(c);
-
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = c;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
-    this.openSnackBar('!Copiado!', '');
+  ngOnInit(): void {
+    console.log('incoming color selected: ', this.color);
   }
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {
-      duration: 2000,
+  openDialog(color: any) {
+    this.dialog.open(ColoresDetailComponent, {
+      width: '400px',
+      data: { color },
     });
   }
 }

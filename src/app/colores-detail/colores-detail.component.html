@@ -1,0 +1,26 @@
+<div *ngIf="data.color">
+  <h1 mat-dialog-title>Selected Color</h1>
+  <div mat-dialog-content>
+    <mat-card
+      class="pointer"
+      [style.background-color]="data.color.color"
+      (click)="copyToClipboard(data.color.color)"
+    >
+      <mat-card-header>
+        {{ data.color.year }}
+      </mat-card-header>
+      <br />
+      <mat-card-content class="align-center">
+        {{ data.color.name }}
+        <br />
+        <b>{{ data.color.color }}</b>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        {{ data.color.pantone_value }}
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+</div>

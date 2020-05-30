@@ -1,7 +1,7 @@
 <mat-card
   class="pointer"
   [style.background-color]="color.color"
-  (click)="copyToClipboard(color.color)"
+  (click)="openDialog(color)"
 >
   <mat-card-header>
     {{ color.year }}

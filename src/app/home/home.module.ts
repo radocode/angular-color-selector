@@ -11,6 +11,7 @@ import { HomeComponent } from './home.component';
 import { ColorsService } from './colors.service';
 import { ColoresSelectedComponent } from '@app/colores-selected/colores-selected.component';
 import { ColoresGridComponent } from '@app/colores-grid/colores-grid.component';
+import { ColoresDetailComponent } from '@app/colores-detail/colores-detail.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,11 @@ import { ColoresGridComponent } from '@app/colores-grid/colores-grid.component';
     MaterialModule,
     HomeRoutingModule,
   ],
-  declarations: [HomeComponent, ColoresGridComponent, ColoresSelectedComponent],
+  declarations: [
+    HomeComponent,
+    ColoresGridComponent,
+    ColoresSelectedComponent,
+    ColoresDetailComponent,
+  ],
 })
 export class HomeModule {}
