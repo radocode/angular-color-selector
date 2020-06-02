@@ -5,9 +5,9 @@ FROM node:10-alpine as builder
 COPY package.json package-lock.json ./
 
 # Install the dependencies and make the folder
-RUN npm install && mkdir /app-ui && mv ./node_modules ./app-ui
+RUN npm install && mkdir /angular-color-selector && mv ./node_modules ./angular-color-selector
 
-WORKDIR /app-ui
+WORKDIR /angular-color-selector
 
 COPY . .
 
@@ -25,7 +25,7 @@ COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy from the stahg 1
-COPY --from=builder /app-ui/dist /usr/share/nginx/html
+COPY --from=builder /angular-color-selector/dist /usr/share/nginx/html
 
 EXPOSE 4200 80
 
