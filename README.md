@@ -5,14 +5,16 @@ Esta app entrega una lista de colores, y que tras elegir color lo puedes copiar 
 # Cómo instalar las dependencias y correr el proyecto
 
 1. Ve a la carpeta del proyecto e instala las dependencias:
- ```sh
- npm install
- ```
+
+```sh
+npm install
+```
 
 2. Luego ejecuta el servidor de desarrollo, y abre `localhost:4200` en tu browser:
- ```sh
- npm start
- ```
+
+```sh
+npm start
+```
 
 # Listado de las tecnologías o frameworks utilizados
 
@@ -22,3 +24,16 @@ Esta app entrega una lista de colores, y que tras elegir color lo puedes copiar 
 - [Material Icons](https://material.io/icons/)
 - [RxJS](http://reactivex.io/rxjs)
 
+# Docker:
+
+Para construir el app:
+
+```sh
+docker build -t angular-color-selector .
+```
+
+Y para correr el app:
+
+```sh
+docker run -d --name appui -p 80:80 angular-color-selector
+```
