@@ -12,7 +12,7 @@ WORKDIR /angular-color-selector
 COPY . .
 
 # Build the project and copy the files
-RUN npm run ng build -- --deploy-url=/envapp/ --prod
+RUN npm run build
 
 
 FROM nginx:alpine

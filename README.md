@@ -29,11 +29,11 @@ npm start
 Para construir el app:
 
 ```sh
-docker build -t angular-color-selector .
+sudo docker build -t angular-color-selector .
 ```
 
 Y para correr el app:
 
 ```sh
-docker run -d --name appui -p 80:80 angular-color-selector
+sudo docker run -d --name angular-color-selector -p 80:80 angular-color-selector
 ```
