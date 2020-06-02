@@ -10,7 +10,7 @@ export const environment = {
   production: true,
   hmr: false,
   version: env.npm_package_version,
-  serverUrl: 'https://reqres.in',
+  serverUrl: 'https://reqres.in/api',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US'],
 };
