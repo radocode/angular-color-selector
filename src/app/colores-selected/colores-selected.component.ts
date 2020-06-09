@@ -9,7 +9,7 @@ import { ColoresDetailComponent } from '@app/colores-detail/colores-detail.compo
   styleUrls: ['./colores-selected.component.scss'],
 })
 export class ColoresSelectedComponent implements OnInit {
-  @Input() color: any;
+  @Input() color: any = {};
 
   constructor(public dialog: MatDialog) {}
 

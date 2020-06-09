@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ColoresGridComponent } from './colores-grid.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ColoresGridComponent', () => {
   let component: ColoresGridComponent;
@@ -8,7 +9,9 @@ describe('ColoresGridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [ColoresGridComponent],
+      providers: []
     }).compileComponents();
   }));
 

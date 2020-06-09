@@ -8,8 +8,8 @@ import {
 import { CoreModule } from '@core';
 import { ColorsService } from './colors.service';
 
-describe('QuoteService', () => {
-  let quoteService: ColorsService;
+describe('ColorsService', () => {
+  let colorsService: ColorsService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('QuoteService', () => {
       providers: [ColorsService],
     });
 
-    quoteService = TestBed.inject(ColorsService);
+    colorsService = TestBed.inject(ColorsService);
     httpMock = TestBed.inject(
       HttpTestingController as Type<HttpTestingController>
     );
@@ -28,31 +28,26 @@ describe('QuoteService', () => {
     httpMock.verify();
   });
 
-  describe('getRandomQuote', () => {
-    it('should return a random Chuck Norris quote', () => {
-      // Arrange
-      const mockQuote = { value: 'a random quote' };
-
+  describe('getAllColors', () => {
+    it('should return all colors', () => {
       // Act
-      const randomQuoteSubscription = quoteService.getRandomQuote({
-        category: 'toto',
-      });
+      const allColorsSubscription = colorsService.getAllColors();
 
       // Assert
-      randomQuoteSubscription.subscribe((quote: string) => {
-        expect(quote).toEqual(mockQuote.value);
+      allColorsSubscription.subscribe((colors: string) => {
+        expect(colors).toBeTruthy();
       });
-      httpMock.expectOne({}).flush(mockQuote);
+      httpMock.expectOne({}).flush([{},{}]);
     });
 
     it('should return a string in case of error', () => {
       // Act
-      const randomQuoteSubscription = quoteService.getRandomQuote({
-        category: 'toto',
+      const colorSubscription = colorsService.getColors({
+        page: null
       });
 
       // Assert
-      randomQuoteSubscription.subscribe((quote: string) => {
+      colorSubscription.subscribe((quote: string) => {
         expect(typeof quote).toEqual('string');
         expect(quote).toContain('Error');
       });

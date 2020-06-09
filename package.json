@@ -8,7 +8,7 @@
     "start": "npm run env -s && ng serve --proxy-config proxy.conf.js",
     "deploy": "npm run env -s && ng deploy",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
-    "test": "npm run env -s && ng test",
+    "test": "npm run env -s && ng test --watch=false --codeCoverage=true",
     "test:ci": "npm run env -s && npm run lint -s && ng test --configuration=ci",
     "e2e": "npm run env -s && ng e2e",
     "translations:extract": "ngx-translate-extract --input ./src --output ./src/translations/template.json --format=json --clean --sort --marker extract",
@@ -54,7 +54,6 @@
     "hads": "^2.0.1",
     "htmlhint": "^0.11.0",
     "https-proxy-agent": "^5.0.0",
-    "husky": "^4.2.3",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.1",
     "karma": "~4.4.1",
@@ -86,10 +85,5 @@
         }
       }
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }
