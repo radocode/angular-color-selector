@@ -1,6 +1,7 @@
 # Colores-app
 
 ![Node.js CI](https://github.com/radocode/angular-color-selector/workflows/Node.js%20CI/badge.svg)
+![Heroku Deploy](https://github.com/radocode/angular-color-selector/workflows/Heroku%20Deploy/badge.svg)
 
 Esta app entrega una lista de colores, y que tras elegir color lo puedes copiar en tu portapapeles! Utiliza como API https://reqres.in/api/colors
 
