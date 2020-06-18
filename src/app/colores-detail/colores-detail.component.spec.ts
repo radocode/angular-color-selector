@@ -1,10 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ColoresDetailComponent } from './colores-detail.component';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { of } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, InjectionToken } from '@angular/core';
+import {
+  CUSTOM_ELEMENTS_SCHEMA,
+  NO_ERRORS_SCHEMA,
+  InjectionToken,
+} from '@angular/core';
 
 export class MatDialogMock {
   // When the component calls this.dialog.open(...) we'll return an object

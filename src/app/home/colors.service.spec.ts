@@ -37,13 +37,13 @@ describe('ColorsService', () => {
       allColorsSubscription.subscribe((colors: string) => {
         expect(colors).toBeTruthy();
       });
-      httpMock.expectOne({}).flush([{},{}]);
+      httpMock.expectOne({}).flush([{}, {}]);
     });
 
     it('should return a string in case of error', () => {
       // Act
       const colorSubscription = colorsService.getColors({
-        page: null
+        page: null,
       });
 
       // Assert

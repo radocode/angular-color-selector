@@ -11,7 +11,7 @@ describe('ColoresGridComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       declarations: [ColoresGridComponent],
-      providers: []
+      providers: [],
     }).compileComponents();
   }));
 

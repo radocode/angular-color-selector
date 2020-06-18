@@ -9,6 +9,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { ColorsService } from '@app/home/colors.service';
 import { finalize } from 'rxjs/operators';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-colores-grid',
@@ -29,7 +30,15 @@ import { trigger, transition, style, animate } from '@angular/animations';
 export class ColoresGridComponent implements OnInit, OnChanges {
   @Input() colors: any;
 
-  constructor(public colorsService: ColorsService) {}
+  public isMobile = false;
+
+  constructor(public colorsService: ColorsService, breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe([
+      Breakpoints.Handset
+    ]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.colors.currentValue) {
@@ -38,7 +47,7 @@ export class ColoresGridComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onPageChange(event: PageEvent) {
     this.colorsService.isLoading = true;

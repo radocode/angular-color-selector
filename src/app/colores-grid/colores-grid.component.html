@@ -1,14 +1,10 @@
-<mat-grid-list cols="3" rowHeight="2:1" *ngIf="colors && colors.data">
+<mat-grid-list [cols]="isMobile ? 1 : 3" rowHeight="2:1" *ngIf="colors && colors.data">
   <mat-grid-tile [@slideInOut] *ngFor="let item of colors.data">
-    <app-colores-selected
-      [color]="item"
-      class="grid-colores"
-    ></app-colores-selected>
+    <app-colores-selected [color]="item" class="grid-colores"></app-colores-selected>
   </mat-grid-tile>
 </mat-grid-list>
-<mat-paginator
-  [length]="colors && colors.total ? colors.total : null"
-  [pageSize]="colors && colors.per_page ? colors.per_page : null"
-  (page)="onPageChange($event)"
->
-</mat-paginator>
+<div class="footer">
+  <mat-paginator [length]="colors && colors.total ? colors.total : null"
+    [pageSize]="colors && colors.per_page ? colors.per_page : null" (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
