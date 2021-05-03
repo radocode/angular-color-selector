@@ -1,25 +1,25 @@
-# Colores-app
+# angular-color-selector
 
 ![Node.js CI](https://github.com/radocode/angular-color-selector/workflows/Node.js%20CI/badge.svg)
 ![Heroku Deploy](https://github.com/radocode/angular-color-selector/workflows/Heroku%20Deploy/badge.svg)
 
-Esta app entrega una lista de colores, y que tras elegir color lo puedes copiar en tu portapapeles! Utiliza como API https://reqres.in/api/colors
+This app shows a list of selectable colors, which you can select and copy its Hex value to the clipboard! Uses https://reqres.in/api/colors as API.
 
-# Cómo instalar las dependencias y correr el proyecto
+# How to install dependencies and run the project
 
-1. Ve a la carpeta del proyecto e instala las dependencias:
+1. In the root directory of the project, install using:
 
 ```sh
 npm install
 ```
 
-2. Luego ejecuta el servidor de desarrollo, y abre `localhost:4200` en tu browser:
+2. Then execute "npm start" and open `localhost:4200` on your browser:
 
 ```sh
 npm start
 ```
 
-# Listado de las tecnologías o frameworks utilizados
+# Frameworks and libraries used
 
 - [Angular](https://angular.io)
 - [Angular Material](https://material.angular.io)
@@ -29,13 +29,13 @@ npm start
 
 # Docker:
 
-Para construir el app:
+To build the app:
 
 ```sh
 sudo docker build -t angular-color-selector .
 ```
 
-Y para correr el app:
+And to run the app:
 
 ```sh
 sudo docker run -d --name angular-color-selector -p 80:80 angular-color-selector
