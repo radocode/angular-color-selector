@@ -39,6 +39,6 @@ export class ColoresDetailComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
-    this.openSnackBar('Copiado al portapapeles!', '');
+    this.openSnackBar('Color value copied to the clipboard!', '');
   }
 }
